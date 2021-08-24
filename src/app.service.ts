@@ -1,13 +1,20 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 
+const array = [];
 @Injectable()
 export class AppService {
   addData(value: string): any {
-    const array = [];
     if (!value) {
-      throw new NotFoundException('Please provide inputs')
+      throw new NotFoundException('Please provide inputs');
     }
     array.push(value);
-    return { ...array };
+    return array;
+  }
+
+  getAllData() {
+    if (!array) {
+      throw new NotFoundException('No Data Available');
+    }
+    return array;
   }
 }
