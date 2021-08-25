@@ -17,4 +17,19 @@ export class AppService {
     }
     return array;
   }
+
+  deleteData(value: string): string {
+    if (!value) {
+      throw new NotFoundException('which value you want to delete');
+    }
+    if (array.includes(value)) {
+      array.filter((data) => {
+        return data.value === value;
+      });
+    } else {
+      throw new NotFoundException(`${value} is not exist`);
+    }
+    console.log('array', array);
+    return `${value} is deleted successfully!`;
+  }
 }
