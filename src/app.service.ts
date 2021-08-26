@@ -23,13 +23,13 @@ export class AppService {
       throw new NotFoundException('which value you want to delete');
     }
     if (array.includes(value)) {
-      array.filter((data) => {
-        return data.value === value;
-      });
+      const index = array.indexOf(value);
+      if (index > -1) {
+        array.splice(index, 1);
+      }
     } else {
       throw new NotFoundException(`${value} is not exist`);
     }
-    console.log('array', array);
     return `${value} is deleted successfully!`;
   }
 }
