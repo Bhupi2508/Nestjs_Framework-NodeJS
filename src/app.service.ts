@@ -20,7 +20,7 @@ export class AppService {
 
   deleteData(value: string): string {
     if (!value) {
-      throw new NotFoundException('which value you want to delete');
+      throw new NotFoundException('Please provide input!');
     }
     if (array.includes(value)) {
       const index = array.indexOf(value);
@@ -31,5 +31,20 @@ export class AppService {
       throw new NotFoundException(`${value} is not exist`);
     }
     return `${value} is deleted successfully!`;
+  }
+
+  updateeData(oldVal: string, newVal: string): string {
+    if (!oldVal) {
+      throw new NotFoundException('please provide input!');
+    }
+    if (array.includes(oldVal)) {
+      const index = array.indexOf(oldVal);
+      if (index > -1) {
+        array[index] = newVal;
+      }
+    } else {
+      throw new NotFoundException(`${oldVal} is not exist`);
+    }
+    return `${oldVal} is updated successfully!`;
   }
 }
