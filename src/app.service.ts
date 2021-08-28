@@ -1,3 +1,18 @@
+/******************************************************************************
+ *  @Execution      :  cmd> npm run dev:start
+ *
+ *  @Purpose        : Create APIs Using nest framwork with nodejs
+ *  @description    : All the APIs logic file
+ *  @file           : app.service.ts
+ *  @overview       : Backend server APIs
+ *  @author         : Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 28/08/2021
+ *
+ ******************************************************************************/
+/**
+ * @implements : Import files
+ */
 import { Injectable, NotFoundException } from '@nestjs/common';
 
 const array = [];
